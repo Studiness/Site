@@ -19,24 +19,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- https://material.io/icons/ -->
 
-    <style>
-        /* @media (min-width: 768px) {
-            .navbar-brand.abs {
-                position: absolute;
-                width: 100%;
-                left: 0;
-                text-align: center;
-                margin: 0 auto;
-            }
-        } */
-    </style>
-
 </head>
 
-<body>
+<body class="padding-top">
 
-    <!-- example 1 - using absolute position for center -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-success">
+    <nav class="navbar navbar-expand-md navbar-dark bg-success sticky-top">
         <a class="navbar-brand abs" href="#">
             <i class="material-icons">add_circle</i>
         </a>
@@ -63,9 +50,45 @@
         </div>
     </nav>
 
-    <h1>Bonjour</h1>
+    <div  class="row align-items-start">
+        <div class="col text-center">
+            <h1>L'entraide 100% digitale.</h1>
+            <p>Avec Studiness, allez plus loin dans l'apprentissage de vos cours.</p>
+            <button type="button" class="btn btn-warning">S'inscrire</button>
+        </div>
 
-    <p>Ceci est un paragraphe</p>
+        <div class="col text-center">
+            <img src="medias/macfamily-productnav-imac_2x.png" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <img src="medias/32ae7dd93f4fde5c49c1ad2b89e89.jpeg" alt="">
+        </div>
+        <div>
+            <h1>Partagez vos notes.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in ex rutrum, aliquet felis in, condimentum mi.
+                Suspendisse volutpat ultricies augue. Vestibulum viverra enim eget scelerisque facilisis. Donec quis tempor
+                metus. Donec tellus lacus, volutpat eu venenatis nec, volutpat et enim. Duis id mauris erat. Quisque posuere
+                nunc non libero mollis porta egestas non eros. Maecenas nec urna tortor. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Vestibulum aliquet nulla fermentum ornare fringilla. Sed porta enim at elit cursus, id rhoncus
+                enim sollicitudin. Phasellus at nibh vel justo interdum cursus eget a dolor. Morbi ut nisi sed dui tempus
+                laoreet ut quis lacus. Aliquam erat volutpat. Aliquam bibendum quam sapien, vitae consequat eros blandit
+                vitae. In bibendum porttitor porta.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col text-center">
+                One of two columns
+            </div>
+            <div class="col text-center">
+                One of two columns
+            </div>
+        </div>
+    </div>
 
 </body>
 
