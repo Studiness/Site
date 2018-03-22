@@ -1,0 +1,38 @@
+/*Fichier custom de déclaration de variables pour couleurs perso*/
+
+.studiblue{
+  color: #017e8c;
+}
+
+.border-studibleu{
+  border-bottom: 3px solid #017e8c;
+}
+
+.btn-studiwarning{
+  background-color: #e94f2b;
+  color: white;
+}
+.btn-studiwarning:hover{
+  background-color: #BF4123;
+}
+
+.bg-studiblue{
+  background-color: #017e8c;
+}
+
+.studivert{
+  color: #054858;
+}
+
+.studiorange{
+  color: #e94f2b;
+}
+
+.border-studiorange{
+  border: 1px solid #e94f2b;
+}
+
+body {
+  padding-top: 4.5rem;
+  font-size: 0.8rem;
+}
