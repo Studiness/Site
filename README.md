@@ -6,7 +6,7 @@ Ce document sert à expliquer le fonctionnement de site pour qui souhaite l’am
 
 ---
 
-### Pages
+## Pages
 Fichiers qui affichent du contenu
 
 ### index
