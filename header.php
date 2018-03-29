@@ -24,14 +24,14 @@ if (session_status() == PHP_SESSION_NONE) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
         <!-- Custom css -->
-        <link href="css/custom_css.css" rel="stylesheet"/>
+        <link href="css/custom_css.css" rel="stylesheet" media="screen"/>
 
     </head>
 
     <body>
 
       <!-- div container qui contient toute la page et se ferme dans footer.php -->
-      <div class="container">
+      <div class="container pt-5">
 
 <?php
 
@@ -65,32 +65,31 @@ if (session_status() == PHP_SESSION_NONE) {
   function navpers ()
   {
     echo('
-    <nav class="navbar navbar-expand-md navbar-light fixed-top justify-content-between bg-primary">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top justify-content-between bg-white">
       <!-- Logo avec mauvaises couleurs : à changer -->
       <a class="nav-link" href="accueil.php">
         <img src="media/miniaturelogo.svg" alt="logo" width="50" height="50"/>
-        <span class="font-weight-bold text-white">STUDINESS</span>
+        <span class="font-weight-bold text-dark">STUDINESS</span>
       </a>
      <!-- div alignée à droite avec les liens -->
      <div class="collapse navbar-collapse col-4 align-self-center" id="navbarCollapse">
        <ul class="navbar-nav mr-auto">
-         <li class="nav-item rounded-0 border border-primary border-top-0 border-bottom-0" id="accueil">
+         <li class="nav-item rounded-0 border border-studiblue border-top-0 border-bottom-0" id="accueil">
            <a class="nav-link" href="/auth/studiness/accueil.php">ACCUEIL</a>
          </li>
-         <li class="nav-item rounded-0 border border-primary border-top-0 border-bottom-0" id="news">
+         <li class="nav-item rounded-0 border border-studiblue border-top-0 border-bottom-0 ml-1" id="news">
            <a class="nav-link" href="/auth/studiness/news.php">NEWS</a>
          </li>
-         <li class="nav-item rounded-0 border border-primary border-top-0 border-bottom-0" id="forum">
+         <li class="nav-item rounded-0 border border-studiblue border-top-0 border-bottom-0 ml-1" id="forum">
            <a class="nav-link" href="/auth/studiness/forum.php">FORUM</a>
          </li>
-         <li class="nav-item rounded-0 border border-primary border-top-0 border-bottom-0" id="monespace">
+         <li class="nav-item rounded-0 border border-studiblue border-top-0 border-bottom-0 ml-1" id="monespace">
            <a class="nav-link" href="/auth/studiness/monespace.php">MON ESPACE</a>
          </li>
-         <li class="nav-item">
-          <a class="nav-link" href="/auth/studiness/logout.php=">Se déconnecter</a>
+         <li class="nav-item ml-1">
+          <a class="nav-link" href="/auth/studiness/logout.php">Se déconnecter</a>
         </li>
        </ul>
-
      </div>
     ');
   }

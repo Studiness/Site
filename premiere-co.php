@@ -8,7 +8,7 @@ require_once('header.php');
 <div class="jumbotron">
 
   <h1>Bienvenue sur STUDINESS !</h1>
-  <h2>Il s'agit de votre première connextion, nous allons configuer votre compte !</h2>
+  <h2>Il s'agit de votre première connexion, nous allons configurer votre compte !</h2>
 
 </div>
 

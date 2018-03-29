@@ -1,10 +1,10 @@
 <?php
 require_once('redirect.php');
-require_once('config.php');
+require_once('header.php');
 
 // Script pour ajouter topic et afficher une alerte si erreur
 
-private function error_entry()
+function error_entry()
 {
   echo('
   <script type="text/javascript">
@@ -16,15 +16,15 @@ private function error_entry()
   ');
 }
 
-if (!isset($_POST['nmessage']) || !isset($_POST['idtopic']) || !isset($_POST['submit']))
+if (!isset($_GET['nmessage']) || !isset($_GET['idtopic']) || !isset($_GET['submit']))
 {
   error_entry();
 }
-if (empty($_POST['nmessage']) || empty($_POST['idtopic']) || empty($_POST['submit']))
+if (empty($_GET['nmessage']) || empty($_GET['idtopic']) || empty($_GET['submit']))
 {
   error_entry();
 }
-if ($_POST['submit']!='real_submit')
+if ($_GET['submit']!='real_submit')
 {
   error_entry();
 }else {
@@ -33,6 +33,9 @@ if ($_POST['submit']!='real_submit')
   // Première étape : récupération de l'id qui correspond au login
   //===========================================================================================
 
+    // Etablissement de la connection avec le serveur (voir détail sur forum.php).
+    $connect=mysqli_connect(SERVEUR, USER, MDP, BDD) or die(mysqli_connect_error($connect));
+    $okcharset=mysqli_set_charset($connect, 'utf8');
     $requete="SELECT `id_user` FROM `studi_users` WHERE `login_user`='" . $_SESSION['userLogin'] . "'";
     $resSQL=mysqli_query($connect, $requete);
     $tab=mysqli_fetch_array($resSQL);
@@ -44,7 +47,7 @@ if ($_POST['submit']!='real_submit')
   // Deuxième étape : enregistrement du message dans la base de données
   //==========================================================================================
 
-    $requete="INSERT INTO `studi_mess` (`message`, `date_mess`, `id_user_mess`, `id_mess_topic`) VALUES ('" . $_POST['message'] . "', " . now() . ", " . $iduser . ", " . $idtopic;
+    $requete="INSERT INTO `studi_mess` (`message`, `date_mess`, `id_user_mess`, `id_mess_topic`) VALUES ('" . $_GET['nmessage'] . "', '" . date('Y-m-d H:i:s') . "', " . $iduser . ", " . $_GET['idtopic'] . ")";
     $resSQL=mysqli_query($connect, $requete);
 
   //=============================
@@ -57,7 +60,7 @@ if ($_POST['submit']!='real_submit')
   <script type="text/javascript">
     window.onload=function redirect()
     {
-      document.location.href="topic.php?topic=' . $idtopic . '"&alert="upsuccess";
+      document.location.href="topic.php?topic=' . $_GET['idtopic'] . '&alert=upsuccess";
     }
   </script>
   ');

@@ -3,7 +3,7 @@ require_once('redirect.php');
 require_once('header.php');
 
 // Création d'une fonction de redirection anti-hackers
-private function redirect_news()
+function redirect_news()
 {
   echo ('<script type="text/javascript">
     window.onload=function redirect()
@@ -26,7 +26,7 @@ if(!isset($_GET['news']) || empty($_GET['news']) || !is_numeric($_GET['news']))
   $resSQL=mysqli_query($connect, $requete) or die(mysqli_connect_error($connect));
   $tab=mysqli_fetch_array($resSQL);
 
-  if (empy($tab['title_news']) || $tab['title_news']=='') {
+  if (empty($tab['title_news']) || $tab['title_news']=='') {
     redirect_news();
   }
   // Affichage du titre
@@ -40,10 +40,10 @@ if(!isset($_GET['news']) || empty($_GET['news']) || !is_numeric($_GET['news']))
   echo ('
 
   <div class="card">
-    <img class="card-img-top" src="' . $tab['media_news'] . '" alt="' . $tab['title_news'] . '">
+    <img class="card-img-top" src="media/news/' . $tab['media_news'] . '" alt="' . $tab['title_news'] . '">
     <div class="card-body">
       <h5 class="card-title">' . $tab['title_news'] . '</h5>
-      <p class="card-text">' . $tab['text_mess'] . '</p>
+      <p class="card-text">' . $tab['text_news'] . '</p>
       <p class="card-text"><small class="text-muted">' . $tab['date_news'] . '</small></p>
     </div>
   </div>
@@ -54,4 +54,5 @@ if(!isset($_GET['news']) || empty($_GET['news']) || !is_numeric($_GET['news']))
   $ok=mysqli_close($connect);
 
 require_once('footer.php');
+}
 ?>

@@ -7,6 +7,9 @@ require_once('CAS/CAS.php');
 // Initialisation des variables de sessions
 session_start();
 
+phpCAS::setDebug();
+phpCAS::client(CAS_VERSION_2_0,"auth.univ-lorraine.fr",443,'');
+
 // Appel de la fonction de logout de la session phpCas
 phpCAS::logout();
 

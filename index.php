@@ -16,6 +16,8 @@ require('header.php');
 
   <div class="col-md-5">
 
+    <img src="media/macstudi.png" alt="STUDINESS" width="450"/>
+
   </div>
 
 </div>
@@ -31,7 +33,13 @@ require('header.php');
   <div class="col-md-5">
 
     <h2>Partagez vos notes<span class="text-warning">.</span></h2>
-    <p class="font-weight-light"></p>
+    <p class="font-weight-light">
+
+      Ne gaspillez plus votre talent et faites des heureux.
+      Vous pourrez enfin aider sans prise de tête, partagez vos cours et vos astuces que vous utilisez pour apprendre.
+      Vous aurez la satisfaction personnelle de faire avancer les amis et en plus, vous pourrez vous même utiliser vos propres notes pour vous rappeler d’un cours que vous avez oublié.
+
+    </p>
 
   </div>
 
@@ -43,21 +51,16 @@ require('header.php');
   <div class="col-md-5 offset-md-1">
 
     <h2>Suivez des tutos<span class="text-warning">.</span></h2>
-    <p class="font-weight-light"></p>
+    <p class="font-weight-light">
+
+      Lire un pavé de 4 pages c’est pas agréable.
+      Ici vous avez la possibilité de voir les explications pas à pas, qui s’adaptent à votre rythme.
+      Vous apprendrez dans le calme ces notions qui “piquent” et arriverez enfin à suivre le groupe.
+      Notre outil de traitement de texte et notre forum ont été spécialement conçu dans l’objectif de rendre facile la rédaction et la lecture.
+
+    </p>
 
   </div>
-  <div class="col-md-5">
-
-
-
-  </div>
-
-</div>
-
-<!-- Quatrième partie de la page, ajoute une image en background et du contenu -->
-<div class="row mt-5">
-
-  <h2>Ils nous font confiance<span class="text-warning">.</span></h2>
 
 </div>
 

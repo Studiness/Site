@@ -1,4 +1,4 @@
-<footer class="bd-footer row  mt-5">
+<footer class="bd-footer row  mt-5 fixed-bottom rounded">
   </hr>
   <!-- Nav avec les différents lien des page (voir ci-dessus) : à complèter -->
   <ul class="nav col-md-8 justify-content-start text-center ml-3">
@@ -20,13 +20,13 @@
   </ul>
   <ul class="nav col-md-3 justify-content-end">
     <li class="nav-item">
-      <a class="nav-link" href="https://www.facebook.com/studiness/" target="_blank"><img src="media/facebook.svg" alt="facebook" height="50"/></a>
+      <a class="nav-link" href="https://www.facebook.com/studiness/" target="_blank"><img src="media/facebook.svg" alt="facebook" height="30"/></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="https://twitter.com/studiness_" target="_blank"><img src="media/twitter.svg" alt="twitter" height="50"/></a>
+      <a class="nav-link" href="https://twitter.com/studiness_" target="_blank"><img src="media/twitter.svg" alt="twitter" height="30"/></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="https://www.instagram.com/studiness_/?hl=fr" target="_blank"><img src="media/instagram.svg" alt="instagram" height="50"/></a>
+      <a class="nav-link" href="https://www.instagram.com/studiness_/?hl=fr" target="_blank"><img src="media/instagram.svg" alt="instagram" height="30"/></a>
     </li>
   </ul>
 

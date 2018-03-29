@@ -6,7 +6,7 @@ require_once('config.php');
 // Intiaalisation des variables de session
 session_start();
 
-private function erreur(){
+function erreur(){
   echo('Quelque-chose s\'est mal passé, peut-être avez-vous tenté l\'impossible ?');
 }
 

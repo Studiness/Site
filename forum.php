@@ -2,15 +2,18 @@
 require_once('redirect.php');
 require_once('header.php');
 
-if ($_GET[error]=="error_entry") {
-  echo('
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>ATTENTION !</strong> Nous avons detecté une erreur. Ne faites pas de bêtises !
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-');
+if (isset($_GET['error']))
+{
+  if ($_GET['error']=="error_entry") {
+    echo('
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>ATTENTION !</strong> Nous avons detecté une erreur. Ne faites pas de bêtises !
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  ');
+  }
 }
 
 ?>
@@ -28,22 +31,22 @@ if ($_GET[error]=="error_entry") {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form action="create-topic.php" methode="post">
-            <div class="form-group">
-              <label for="topictitle" class="col-form-label">Titre du sujet</label>
-              <input type="text" class="form-control" id="topictitle" name="topictitle" required="required">
-            </div>
-            <div class="form-group">
-              <label for="message" class="col-form-label">Message</label>
-              <textarea class="form-control" id="message" name="message" required="required"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" name="submit" value="real_submit" class="btn btn-primary">Send message</button>
-        </div>
+        <form action="create-topic.php" methode="get">
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="topictitle" class="col-form-label">Titre du sujet</label>
+                <input type="text" class="form-control" id="topictitle" name="topictitle" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="message" class="col-form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" required="required"></textarea>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <input type="submit" value="Créer !" class="btn btn-primary"/>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -62,12 +65,12 @@ if ($_GET[error]=="error_entry") {
 // Boucle qui va permettre d'afficher un a par topic trouvé.
   for ($i=0; $i < $nbEnr; $i++) {
 // Enregistrement des infos du Iième topic
-  $tab=msqli_fetch_array($resSQL);
+  $tab=mysqli_fetch_array($resSQL);
   echo('<a href="topic.php?topic=' . $tab['id_topic'] . '" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">' . $tab['nom_topic'] . '</h5>');
 // Pour chaque topic, il va y avoir affiché le dernier message avec la date et l'utilisateur qui l'a posté.
-    $requete2="SELECT * FROM `studi_mess` INNER JOIN `studi_users` ON `studi_mess`.`id_mess_user`=`studi_users`.`id_user` ORDER BY `date_mess` DESC LIMIT=1";
+    $requete2="SELECT * FROM `studi_mess` INNER JOIN `studi_users` ON `studi_mess`.`id_user_mess`=`studi_users`.`id_user` WHERE `studi_mess`.`id_mess_topic`=" . $tab['id_topic'] . " ORDER BY `date_mess` LIMIT 1";
     $resSQL2=mysqli_query($connect, $requete2) or die(mysqli_connect_error($connect));
     $mess=mysqli_fetch_array($resSQL2);
       echo('<small>' . $mess['date_mess'] . '</small>

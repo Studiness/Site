@@ -20,6 +20,10 @@
   background-color: #017e8c;
 }
 
+.border-studiblue{
+  border: 2px solid #017e8c;
+}
+
 .studivert{
   color: #054858;
 }
@@ -35,4 +39,14 @@
 body {
   padding-top: 4.5rem;
   font-size: 0.8rem;
+  background-color: #EEEEEE;
+  margin-bottom: 80px;
+}
+
+footer{
+  background-color: white;
+}
+
+.jumbotron{
+  background-color: white;
 }

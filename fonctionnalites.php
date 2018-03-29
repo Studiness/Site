@@ -9,71 +9,30 @@ require('header.php');
     <div class="card">
       <div class="card-header" role="tab" id="headingOne">
         <h5 class="mb-0">
-          <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne" class="studivert">
+          <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="collapseOne" class="studivert">
             Forum
           </a>
         </h5>
       </div>
 
-      <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
-
+          <p>Partagez vos impressions, vos connaissances et vos problèmes sur notre Forum Studiness.</p>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header" role="tab" id="headingTwo">
         <h5 class="mb-0">
-          <a class="collapsed studivert" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-            Plateforme vidéo pour partage de tutos
+          <a data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo" class="studivert">
+            News
           </a>
         </h5>
       </div>
+
       <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" role="tab" id="headingThree">
-        <h5 class="mb-0">
-          <a class="collapsed studivert" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-            Partage de fichiers (corrections)
-          </a>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" role="tab" id="headingFour">
-        <h5 class="mb-0">
-          <a class="collapsed studivert" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
-            Favoris
-          </a>
-        </h5>
-      </div>
-      <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" role="tab" id="headingFive">
-        <h5 class="mb-0">
-          <a class="collapsed studivert" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
-            Classement
-          </a>
-        </h5>
-      </div>
-      <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
-        <div class="card-body">
-          
+          <p>Tenez-vous informés de l'actualité high-tech !</p>
         </div>
       </div>
     </div>

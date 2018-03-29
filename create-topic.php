@@ -1,11 +1,10 @@
 <?php
 require_once('redirect.php');
-require_once('config.php');
-
+require_once('header.php');
 
 // Script pour ajouter topic et rediriger vers topic
 
-private function error_entry()
+function error_entry()
 {
   echo('
   <script type="text/javascript">
@@ -17,18 +16,14 @@ private function error_entry()
   ');
 }
 
-if (!isset($_POST['topictitle']) || !isset($_POST['message']) || !isset($_POST['submit']))
+if (!isset($_GET['topictitle']) || !isset($_GET['message']))
 {
   error_entry();
 }
-if (empty($_POST['topictitle']) || empty($_POST['message']) || empty($_POST['submit']))
+if (empty($_GET['topictitle']) || empty($_GET['message']))
 {
   error_entry();
-}
-if ($_POST['submit']!='real_submit')
-{
-  error_entry();
-}else {
+}else{
   //===========================================================================================
   // Première étape : enregistrement du nom du topictitle
   //===========================================================================================
@@ -37,7 +32,7 @@ if ($_POST['submit']!='real_submit')
     $connect=mysqli_connect(SERVEUR, USER, MDP, BDD) or die(mysqli_connect_error($connect));
     $okcharset=mysqli_set_charset($connect, 'utf8');
   // Préparation de la requete qui va capturer les topic existants
-    $requete="INSERT INTO `studi_topics` (`nom_topic`, `date_topic`) VALUES ('" . $_POST['topictitle'] . "', " . now() . ")";
+    $requete="INSERT INTO `studi_topics` (`nom_topic`, `date_topic`) VALUES ('" . $_GET['topictitle'] . "', '" . date('Y-m-d H:m:s') . "')";
   // Récupération des valeurs résultantes de la requete
     $resSQL=mysqli_query($connect, $requete) or die(mysqli_connect_error($connect));
 
@@ -45,7 +40,7 @@ if ($_POST['submit']!='real_submit')
   // Deuxième étape : récupération de l'ID du topictitle
   //===========================================================================================
 
-    $requete="SELECT `id_topic` FROM `studi_topics` WHERE `nom_topic`='" . $_POST['topictitle'] . "'";
+    $requete="SELECT `id_topic` FROM `studi_topics` WHERE `nom_topic`='" . $_GET['topictitle'] . "'";
     $resSQL=mysqli_query($connect, $requete) or die(mysqli_connect_error($connect));
     $tab=mysqli_fetch_array($resSQL);
     // Enregistrement de l'ID dans une variable
@@ -67,7 +62,7 @@ if ($_POST['submit']!='real_submit')
   // Quatrième étape : enregistrement du message dans la base de données
   //==========================================================================================
 
-    $requete="INSERT INTO `studi_mess` (`message`, `date_mess`, `id_user_mess`, `id_mess_topic`) VALUES ('" . $_POST['message'] . "', " . now() . ", " . $iduser . ", " . $idtopic;
+    $requete="INSERT INTO `studi_mess` (`message`, `date_mess`, `id_user_mess`, `id_mess_topic`) VALUES ('" . $_GET['message'] . "', '" . date('Y-m-d H:m:s') . "', " . $iduser . ", " . $idtopic . ")";
     $resSQL=mysqli_query($connect, $requete);
 
   //=============================
@@ -80,7 +75,7 @@ if ($_POST['submit']!='real_submit')
   <script type="text/javascript">
     window.onload=function redirect()
     {
-      document.location.href="topic.php?topic=' . $idtopic . '"&alert="success";
+      document.location.href="topic.php?topic=' . $_GET['idtopic'] . '&alert=upsuccess";
     }
   </script>
   ');
